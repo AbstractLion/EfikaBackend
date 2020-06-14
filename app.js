@@ -31,12 +31,12 @@ const payload = {
   itemSets: [
     {
       refId: 0,
-      dimensions: { x: 2, y: 2, z: 4 },
-      quantity: 42,
+      dimensions: { x: 21, y: 22, z: 41 },
+      quantity: 2,
     },
     {
       refId: 1,
-      dimensions: { x: 1, y: 2, z: 2 },
+      dimensions: { x: 11, y: 12, z: 5 },
       quantity: 56,
     },
     {
