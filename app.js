@@ -10,7 +10,7 @@ const containers = {
     weightMax: 400,
     name: "ShoppingCart",
     dimensions: {
-      x: 79,
+      x: 30,
       y: 40,
       z: 51,
     },
@@ -19,8 +19,8 @@ const containers = {
     weightMax: 150,
     name: "CarryingBasket",
     dimensions: {
-      x: 48,
-      y: 18,
+      x: 18,
+      y: 48,
       z: 35,
     },
   },
@@ -37,7 +37,7 @@ const payload = {
     {
       refId: 1,
       dimensions: { x: 1, y: 2, z: 2 },
-      quantity: 52,
+      quantity: 56,
     },
     {
       refId: 2,
@@ -47,12 +47,12 @@ const payload = {
     {
       refId: 3,
       dimensions: { x: 1, y: 1, z: 2 },
-      quantity: 32,
+      quantity: 33,
     },
     {
       refId: 4,
       dimensions: { x: 1, y: 4, z: 2 },
-      quantity: 42,
+      quantity: 44,
     },
   ],
   boxTypes: [
@@ -95,8 +95,10 @@ app.get("/get-svg", function (req, res) {
     const data = await fetchData();
     let body = "<!DOCTYPE html>";
     body += `<html><head>`;
-    body += `<style>${data.style}</style>`;
+    body += `<script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>`
     body += `<script>${data.scripts}</script>`;
+    body += `<style>body { background-color: #333333 !important</style> };`;
+    body += `<style>${data.styles}</style>`;
     body += `</head><body>`
     for (let i = 0; i < data.svgs.length; i++) {
       const svg = data.svgs[i];
