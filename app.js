@@ -3,6 +3,7 @@ const express = require("express");
 const app = express();
 const fetch = require("node-fetch");
 
+const port = process.env.PORT;
 const apiKey = process.env.API_KEY;
 
 const containers = {
@@ -74,6 +75,8 @@ const fetchData = async () => {
   return data;
 };
 
+app.use(express.json());
+
 app.get("/", function (req, res) {
   (async () => {
     const data = await fetchData();
@@ -109,6 +112,12 @@ app.get("/get-svg", function (req, res) {
   })();
 });
 
-var server = app.listen(8081, function () {
+app.post("/cart-check", function (req, res) {
+  (async () => {
+    
+  })();
+});
+
+var server = app.listen(port, function () {
   console.log(`Listening on port 8080`);
 });
